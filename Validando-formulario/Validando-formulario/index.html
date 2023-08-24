@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Formulário</title>
+    <script src="index.css"></script>
+    <script>
+        function validarFormulario() {
+            
+            var caixaA = parseInt(document.getElementById("caixaA").value);
+            var caixaB = parseInt(document.getElementById("caixaB").value);
+
+            if (caixaB > caixaA) {
+                document.getElementById("mensagem").innerHTML = "Formulário válido! B é maior que A.";
+            } 
+            else {
+                document.getElementById("mensagem").innerHTML = "Formulário inválido! B deve ser maior que A.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+    <h1>Validação de Formulário</h1>
+    <form>
+        <label for="caixaA">Caixa A:</label>
+        <input type="number" id="caixaA" name="caixaA" required>
+        <br>
+        <label for="caixaB">Caixa B:</label>
+        <input type="number" id="caixaB" name="caixaB" required>
+        <br>
+        <button type="button" onclick="validarFormulario()">Enviar</button>
+    </form>
+    <p id="mensagem"></p>
+    </div>
+</body>
+</html>
